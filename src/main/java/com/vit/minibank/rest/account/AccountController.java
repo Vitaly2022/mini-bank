@@ -22,7 +22,7 @@ public interface AccountController {
     Account replenishBalance(AccountTransactionReq request);
 
     @Operation(summary = "Снять деньги со счета")
-    Account writingBalance(AccountTransactionReq request);
+    Account withdrawFromAccount(AccountTransactionReq request);
 
     @Operation(summary = "Перевести деньги на другой счет")
     Account transfer(AccountTransferReq request);

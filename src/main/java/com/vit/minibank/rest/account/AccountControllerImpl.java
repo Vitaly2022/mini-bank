@@ -59,12 +59,12 @@ public class AccountControllerImpl implements AccountController {
     }
 
     @Override
-    @PostMapping("/writing")
-    public Account writingBalance(@RequestBody @Valid AccountTransactionReq request) {
-        log.info("[writingBalanceRq] <-- {}", request);
+    @PostMapping("/withdraw")
+    public Account withdrawFromAccount(@RequestBody @Valid AccountTransactionReq request) {
+        log.info("[withdrawFromAccount] <-- {}", request);
         Account account = service.withdrawFromAccount(request);
 
-        tologResponse(account, "writingBalanceRs");
+        tologResponse(account, "withdrawFromAccountRs");
 
         return account;
     }
