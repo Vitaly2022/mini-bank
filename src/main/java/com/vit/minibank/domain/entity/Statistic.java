@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.vit.minibank.domain.enums.OperationType;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -37,6 +38,7 @@ public class Statistic {
 
     @JsonIgnore
     @Column(name = "modification_date")
+    @UpdateTimestamp
     private Timestamp modificationDate;
 
     @ManyToOne

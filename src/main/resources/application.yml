@@ -1,12 +1,14 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+#    ссылаемся на имя сервиса в docker-compose db
+    url: jdbc:postgresql://localhost:5432/db
     driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: postgres
+    username: developer
+    password: parol
   jpa:
     properties:
       hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         cache:
           use_second_level_cache: true
           region:
@@ -14,5 +16,3 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yml
     enabled: true
-server:
-  port: 8080

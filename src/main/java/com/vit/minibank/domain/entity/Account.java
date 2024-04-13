@@ -3,6 +3,7 @@ package com.vit.minibank.domain.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -30,6 +31,7 @@ public class Account {
 
     @JsonIgnore
     @Column(name = "modification_date")
+    @UpdateTimestamp
     private Timestamp modificationDate;
 
     @ManyToOne

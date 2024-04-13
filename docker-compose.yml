@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  mini-bank:
+    image: mini_bank
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/mini_db
+      - SPRING_DATASOURCE_USERNAME=developer
+      - SPRING_DATASOURCE_PASSWORD=parol
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+  db:
+    container_name: mini_bank_db
+    image: postgres:15
+    environment:
+      POSTGRES_DB: "mini_db"
+      POSTGRES_USER: "developer"
+      POSTGRES_PASSWORD: "parol"
+    ports:
+      - "5432:5432"
+
+
+
+

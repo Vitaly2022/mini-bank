@@ -27,6 +27,7 @@
 - Maven
 - liquibase
 - PostgreSQL
+- Docker
 
 ## Swagger UI 
 - http://localhost:8080/swagger-ui/index.html 

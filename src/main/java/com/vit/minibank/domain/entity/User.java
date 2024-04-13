@@ -3,6 +3,7 @@ package com.vit.minibank.domain.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -29,6 +30,7 @@ public class User {
 
     @JsonIgnore
     @Column(name = "modification_date")
+    @UpdateTimestamp
     private Timestamp modificationDate;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
